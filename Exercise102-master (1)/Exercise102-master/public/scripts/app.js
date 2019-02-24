@@ -1,7 +1,7 @@
-(function() {
+(function () {
   'use strict';
 
-  window.onload = function() {
+  window.onload = function () {
     let message = localStorage.getItem("message") || 'Your message will display here';
     $('#message').html(message);
     $('#display').html(message);
@@ -17,7 +17,7 @@
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('./service-worker.js')
-             .then(function() { console.log('Service Worker Registered'); });
+      .register('./service-worker.js')
+      .then(function () { console.log('Service Worker Registered'); });
   }
 })();

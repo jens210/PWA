@@ -1,11 +1,12 @@
-var dataCacheName = 'template-pwa';
-var cacheName = 'template-pwa';
-//TODO: which files should be cached? Add them here:
+var dataCacheName = 'todo-pwa';
+var cacheName = 'todo-pwa';
 var filesToCache = [
-  "/public/scripts/app.js",
-  "/public/index.html",
-  "/public/styles/style.css",
-  "/public/styles/materialize.css"
+  "/todo/js/app.js",
+  "/todo/js/main.js",
+  "/todo/index.html",
+  "/todo/css/style.css",
+  "/todo/lib/bootstrap/css/bootstrap.min.css",
+  "/todo/lib/bootstrap/js/bootstrap.min.js"
 ];
 
 self.addEventListener('install', function(e) {
@@ -47,7 +48,8 @@ self.addEventListener('fetch', function(event) {
           console.log("logged url:" + response.url);
           return response;
         }
-        return fetch(event.request);
+        
+        return fetch(event.request,{mode: 'cors'});
       }
     )
   );
